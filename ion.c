@@ -71,14 +71,7 @@ int ion_close(int fd) {
 static int ion_ioctl(int fd, int req, void* arg) {
     int ret = ioctl(fd, req, arg);
     if (ret < 0) {
-	/*
-	 * To avoid confusion, do not print an error log if the error came from
-	 * issuing an unimplemented IOCTL. Various versions of ION do not
-	 * support several IOCTLs and they are issued to check which ION version
-	 * the device supports.
-	 */
-	if (errno != ENOTTY)
-		ALOGE("ioctl %x failed with code %d: %s", req, ret, strerror(errno));
+        ALOGE("ioctl %x failed with code %d: %s", req, ret, strerror(errno));
         return -errno;
     }
     return ret;
