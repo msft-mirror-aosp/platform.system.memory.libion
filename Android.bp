@@ -32,16 +32,5 @@ cc_library {
     srcs: ["ion.c"],
     header_libs: ["libion_headers"],
     export_header_lib_headers: ["libion_headers"],
-    shared_libs: ["liblog"],
     cflags: ["-Werror"],
 }
-
-cc_binary {
-    name: "iontest",
-    srcs: ["ion_test.c"],
-    static_libs: ["libion"],
-    shared_libs: ["liblog"],
-    cflags: ["-Werror"],
-}
-
-subdirs = ["tests"]
