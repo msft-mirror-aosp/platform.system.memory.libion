@@ -28,27 +28,50 @@ __BEGIN_DECLS
 
 struct ion_handle;
 
+[[deprecated("ION support will be removed in 2026")]]
 int ion_open();
+
+[[deprecated("ION support will be removed in 2026")]]
 int ion_close(int fd);
+
+[[deprecated("ION support will be removed in 2026")]]
 int ion_alloc(int fd, size_t len, size_t align, unsigned int heap_mask,
               unsigned int flags, ion_user_handle_t *handle);
+
+[[deprecated("ION support will be removed in 2026")]]
 int ion_alloc_fd(int fd, size_t len, size_t align, unsigned int heap_mask,
               unsigned int flags, int *handle_fd);
+
+[[deprecated("ION support will be removed in 2026")]]
 int ion_sync_fd(int fd, int handle_fd);
+
+[[deprecated("ION support will be removed in 2026")]]
 int ion_free(int fd, ion_user_handle_t handle);
+
+[[deprecated("ION support will be removed in 2026")]]
 int ion_map(int fd, ion_user_handle_t handle, size_t length, int prot,
             int flags, off_t offset, unsigned char **ptr, int *map_fd);
+
+[[deprecated("ION support will be removed in 2026")]]
 int ion_share(int fd, ion_user_handle_t handle, int *share_fd);
+
+[[deprecated("ION support will be removed in 2026")]]
 int ion_import(int fd, int share_fd, ion_user_handle_t *handle);
 
 /**
   * Add 4.12+ kernel ION interfaces here for forward compatibility
   * This should be needed till the pre-4.12+ ION interfaces are backported.
   */
+[[deprecated("ION support will be removed in 2026")]]
 int ion_query_heap_cnt(int fd, int* cnt);
+
+[[deprecated("ION support will be removed in 2026")]]
 int ion_query_get_heaps(int fd, int cnt, void* buffers);
 
+[[deprecated("ION support will be removed in 2026")]]
 int ion_is_legacy(int fd);
+
+[[deprecated("ION support will be removed in 2026")]]
 int ion_is_using_modular_heaps(int fd);
 
 __END_DECLS
